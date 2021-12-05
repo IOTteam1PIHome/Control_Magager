@@ -9,7 +9,7 @@ topic = "pi/#"
 server = "34.193.131.206" #EC2 address
 
 def on_connect(client, userdata, flags, rc):
-    print("Connected with RC : " + str(rc))
+    print("Start Program...")
     client.subscribe(topic)
 
 def on_message(client, userdata, msg):
