@@ -13,10 +13,11 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(topic)
 
 def on_message(client, userdata, msg):
+    print(msg.payload)
     if(msg.payload == "emer"):
-        os.system("python /home/ubuntu/Control_Magager/Texting.py") #Texting.py dir 
+        os.system("python3 /home/ubuntu/Control_Magager/Texting.py") #Texting.py dir 
     elif(msg.payload == "weather") :
-        os.system("python /home/ubuntu/Control_Magager/weather.py") #weather.py dir
+        os.system("python3 /home/ubuntu/Control_Magager/weather.py") #weather.py dir
 
 client =mqtt.Client()
 client.connect(server, 1883, 60)
