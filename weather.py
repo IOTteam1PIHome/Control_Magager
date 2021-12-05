@@ -41,6 +41,6 @@ client = mqtt.Client()
 client.connect(server, 1883, 60)
 # client.on_connect = on_connect
 # client.on_message = on_message
-client.publish("pi/weather", data["weather"][0]["description"])
+client.publish("cloud/weather", data["weather"][0]["description"])
 
 client.loop_start()
