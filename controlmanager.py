@@ -5,7 +5,7 @@ from datetime import datetime
 import requests
 import json
 
-topic = "#"
+topic = "pi/#"
 server = "34.193.131.206" #EC2 address
 
 def on_connect(client, userdata, flags, rc):
@@ -23,5 +23,5 @@ client =mqtt.Client()
 client.connect(server, 1883, 60)
 client.on_connect = on_connect
 client.on_message = on_message
-client.subscribe("#")
+client.subscribe("pi/#")
 client.loop_forever()
