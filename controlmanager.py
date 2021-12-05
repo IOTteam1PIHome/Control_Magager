@@ -14,9 +14,9 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     print(msg.payload)
-    if(msg.payload == "emer"):
+    if(str(msg.payload) == "emer"):
         os.system("python3 /home/ubuntu/Control_Magager/Texting.py") #Texting.py dir 
-    elif(msg.payload == "weather") :
+    elif(str(msg.payload) == "weather") :
         os.system("python3 /home/ubuntu/Control_Magager/weather.py") #weather.py dir
 
 client =mqtt.Client()
